@@ -13,10 +13,13 @@ public class OrderPage extends BasePage {
     private By SurnameButton = By.xpath("//input[@placeholder='* Фамилия']");
     private By AddressButton = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
     private By StationButton = By.xpath("//input[@placeholder='* Станция метро']");
-    private By MetroName = By.xpath("//input[@value='Красносельская']");
+    private By MetroName = By.xpath("//*[text( ) = 'Красносельская']");
     private By PhoneButton = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
     private By NextButton = By.xpath("//button[contains(text(),'Далее')]");
-    private By DateButton = By.xpath("//button[contains(text(),'Далее')]");
+    private By DateButton = By.xpath("//input[@placeholder='* Когда привезти самокат']");
+    private By TimeButton = By.xpath("//div[@class='Dropdown-placeholder']");
+    private By FinishButton = By.xpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
+    private By YesButton = By.xpath("//button[contains(text(),'Да')]");
 
 
 
@@ -39,7 +42,6 @@ public class OrderPage extends BasePage {
 
     public void selectMetroStation(String text) {
         webDriver.findElement(StationButton).click();
-        //webDriver.findElement(StationButton).sendKeys(text);
         webDriver.findElement(MetroName).click();
     }
 
@@ -59,14 +61,16 @@ public class OrderPage extends BasePage {
     }
 
     public void choseTime() {
-        //webDriver.findElement(NameButton).sendKeys();
+        webDriver.findElement(TimeButton).click();
+        webDriver.findElement(By.xpath("//*[text( ) = 'двое суток']")).click();
+
     }
 
     public void clickOrderButtonFinish() {
-        //webDriver.findElement(NameButton).sendKeys();
+        webDriver.findElement(FinishButton).click();
     }
 
     public void clickYesButton() {
-        //webDriver.findElement(NameButton).sendKeys();
+        webDriver.findElement(YesButton).click();
     }
 }

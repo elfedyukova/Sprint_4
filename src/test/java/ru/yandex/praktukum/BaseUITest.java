@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +19,8 @@ public abstract class BaseUITest {
     public static void setup (){
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
+        //WebDriverManager.firefoxdriver().setup();
+        //webDriver = new FirefoxDriver();
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         webDriver.get("https://qa-scooter.praktikum-services.ru/");
         webDriver.findElement(By.id("rcc-confirm-button")).click();
