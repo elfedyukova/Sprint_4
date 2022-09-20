@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 
 public class OrderTest extends BaseUITest {
-
    @Test
    public void orderShould() {
       MainPage mainPage = new MainPage(webDriver);
@@ -25,7 +24,6 @@ public class OrderTest extends BaseUITest {
       Assert.assertTrue("Order modal is not displayed", isDisplayed);
 
    }
-
    @Test
    public void orderShouldSecond() {
       MainPage mainPage = new MainPage(webDriver);

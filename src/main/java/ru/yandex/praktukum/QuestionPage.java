@@ -12,7 +12,6 @@ public class QuestionPage extends BasePage{
     private By sixthQuestion = By.id("accordion__heading-5");
     private By seventhQuestion = By.id("accordion__heading-6");
     private By eighthQuestion = By.id("accordion__heading-7");
-    
 
     protected QuestionPage(WebDriver webDriver) {
         super(webDriver);
